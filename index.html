@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Defines the character encoding -->
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title shown in browser tab -->
+    <title>Two Player Symbol Game</title>
+
+    <!-- Connects the external CSS file -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main application container -->
+    <div class="app">
+
+        <!-- Game heading -->
+        <header class="header">
+            <h1>⭐ Two Player Symbol Game</h1>
+            <p>Complete 3 symbols in one row to win</p>
+        </header>
+
+
+        <!-- ================= SETUP SECTION ================= -->
+
+        <section id="setupSection" class="setup-section">
+
+            <h2>Game Setup</h2>
+
+            <p class="setup-info">
+                Two players can enter their names and choose their symbols.
+            </p>
+
+
+            <!-- User 1 setup -->
+
+            <div class="player-setup">
+
+                <h3>Player 1</h3>
+
+                <!-- User 1 name -->
+                <label for="player1Name">
+                    Enter Player 1 Name
+                </label>
+
+                <input
+                    type="text"
+                    id="player1Name"
+                    placeholder="Enter name"
+                    maxlength="20"
+                >
+
+
+                <!-- User 1 symbol -->
+                <label for="player1Symbol">
+                    Choose Symbol
+                </label>
+
+                <input
+                    type="text"
+                    id="player1Symbol"
+                    placeholder="Only X or 0"
+                    maxlength="1"
+                >
+
+                <!-- Error message for User 1 -->
+                <p id="player1Error" class="error"></p>
+
+
+                <!-- Button to activate User 1 -->
+                <button id="activatePlayer1Btn" class="primary-btn">
+                    Activate Player 1
+                </button>
+
+            </div>
+
+
+            <!-- User 2 setup -->
+
+            <div
+                id="player2Setup"
+                class="player-setup disabled-section"
+            >
+
+                <h3>Player 2</h3>
+
+                <!-- User 2 name -->
+                <label for="player2Name">
+                    Enter Player 2 Name
+                </label>
+
+                <input
+                    type="text"
+                    id="player2Name"
+                    placeholder="Enter name"
+                    maxlength="20"
+                    disabled
+                >
+
+
+                <!-- User 2 symbol -->
+                <label for="player2Symbol">
+                    Choose Symbol
+                </label>
+
+                <input
+                    type="text"
+                    id="player2Symbol"
+                    placeholder="Only remaining symbol"
+                    maxlength="1"
+                    disabled
+                >
+
+                <!-- Error message for User 2 -->
+                <p id="player2Error" class="error"></p>
+
+
+                <!-- Button to activate User 2 -->
+                <button
+                    id="activatePlayer2Btn"
+                    class="primary-btn"
+                    disabled
+                >
+                    Activate Player 2
+                </button>
+
+            </div>
+
+
+            <!-- Start game button -->
+
+            <button
+                id="startGameBtn"
+                class="start-btn"
+                disabled
+            >
+                Start Game
+            </button>
+
+        </section>
+
+
+        <!-- ================= GAME SECTION ================= -->
+
+        <section
+            id="gameSection"
+            class="game-section hidden"
+        >
+
+            <!-- Current turn information -->
+
+            <div class="turn-card">
+
+                <p id="turnLabel">
+                    Current Turn
+                </p>
+
+                <h2 id="activePlayerName">
+                    Player
+                </h2>
+
+                <!-- Important reminder -->
+                <div class="symbol-reminder">
+
+                    <span>Your Symbol:</span>
+
+                    <strong id="activePlayerSymbol">
+                        X
+                    </strong>
+
+                </div>
+
+                <p id="hintMessage">
+                    Enter only your selected symbol.
+                </p>
+
+            </div>
+
+
+            <!-- Score board -->
+
+            <div class="score-board">
+
+                <!-- Player 1 score -->
+
+                <div class="score-card">
+
+                    <h3 id="scorePlayer1Name">
+                        Player 1
+                    </h3>
+
+                    <div
+                        id="scorePlayer1Symbol"
+                        class="score-symbol"
+                    >
+                        X
+                    </div>
+
+                    <p>
+                        Score:
+                        <strong id="scorePlayer1">
+                            0
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <!-- Player 2 score -->
+
+                <div class="score-card">
+
+                    <h3 id="scorePlayer2Name">
+                        Player 2
+                    </h3>
+
+                    <div
+                        id="scorePlayer2Symbol"
+                        class="score-symbol"
+                    >
+                        0
+                    </div>
+
+                    <p>
+                        Score:
+                        <strong id="scorePlayer2">
+                            0
+                        </strong>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Game board -->
+
+            <div
+                id="gameBoard"
+                class="game-board"
+            >
+
+                <!-- Cell 0 -->
+                <button class="cell" data-index="0"></button>
+
+                <!-- Cell 1 -->
+                <button class="cell" data-index="1"></button>
+
+                <!-- Cell 2 -->
+                <button class="cell" data-index="2"></button>
+
+                <!-- Cell 3 -->
+                <button class="cell" data-index="3"></button>
+
+                <!-- Cell 4 -->
+                <button class="cell" data-index="4"></button>
+
+                <!-- Cell 5 -->
+                <button class="cell" data-index="5"></button>
+
+                <!-- Cell 6 -->
+                <button class="cell" data-index="6"></button>
+
+                <!-- Cell 7 -->
+                <button class="cell" data-index="7"></button>
+
+                <!-- Cell 8 -->
+                <button class="cell" data-index="8"></button>
+
+            </div>
+
+
+            <!-- Game result -->
+
+            <div
+                id="resultBox"
+                class="result-box hidden"
+            >
+
+                <h2 id="resultTitle">
+                    Winner
+                </h2>
+
+                <p id="resultMessage"></p>
+
+                <!-- Start next game -->
+                <button
+                    id="nextGameBtn"
+                    class="start-btn"
+                >
+                    Next Game
+                </button>
+
+            </div>
+
+
+            <!-- Game controls -->
+
+            <div class="game-controls">
+
+                <!-- Restart complete session -->
+                <button
+                    id="newSessionBtn"
+                    class="danger-btn"
+                >
+                    New Session
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- Connects JavaScript file -->
+    <script src="script.js"></script>
+
+</body>
+</html>
