@@ -1,0 +1,16 @@
+complete code likhne k bd vs code ko bnd kre -> GitHub account open kre new repository name type kre down scroll create repository botton pr click kre ->
+
+file location jise live krna hai folder me jaye aur right click kre show more option se vs code pr jaye / folder me jane ke bad address bar me sb kuch location remove krk cmd type kre aur enter kre user dos me pahuch jayega aur vaha pr code . enter kre vs code me project file open hu jaegi aur terminal open kre(ctrl+shift+`) usk bd GitHub se milne vale sbhi command ko step by step type krk enter kre.
+
+1. git init
+2. git add .
+3. git commit -m "first commit"
+4. git commit -M main
+5. GitHub se milne vala 5th command copy paste kre or sahi step me type kre (suggest me copy paste).
+
+6. git push -u origin main
+ agr kbhi update krna hu toh code ko isi trh vs me open kre aur kuch command chlaye.
+
+1. git add .
+2. git commit -m "update commit"
+3. git push -u origin main
