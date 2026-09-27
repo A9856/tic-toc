@@ -1,3 +1,21 @@
+google pr git download type kre search kre first website 
+pr jaye fir for windows tab se apne system ke according ke 
+64base/ARM64 ye uska type h apne laptop me system information se
+check kre usi ke according download kre fir file ko open krk first
+me loaction select krk browse kre fir all checkbox check kre fir continue
+next next krte jaye ending me finish krne se pahle dikhne vale both 
+checkbox check krk finish kre.
+
+fit github google pr likh enter kre first website se 
+github ke liye signup krk account bnaye jb account bn jaye
+toh sb close kre window.
+ek location pr folder bnaye usme
+index.html file 
+style.css
+script.js file bnaye sbka code alg lg file me
+head me style.css link kro
+body close tag se phle js file link.
+
 complete code likhne k bd vs code ko bnd kre -> GitHub account open kre new repository name type kre down scroll create repository botton pr click kre ->
 
 file location jise live krna hai folder me jaye aur right click kre show more option se vs code pr jaye / folder me jane ke bad address bar me sb kuch location remove krk cmd type kre aur enter kre user dos me pahuch jayega aur vaha pr code . enter kre vs code me project file open hu jaegi aur terminal open kre(ctrl+shift+`) usk bd GitHub se milne vale sbhi command ko step by step type krk enter kre.
